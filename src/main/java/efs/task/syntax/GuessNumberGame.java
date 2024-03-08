@@ -44,20 +44,19 @@ public class GuessNumberGame {
 
     public void play() {
 
-        int yourAnswer;
+        Integer yourAnswer;
 
         System.out.println("Zagrajmy. Zgadnij liczbę z zakresu <1," + M + ">");
 
+        Scanner scanner = new Scanner(System.in);
+
         while(numberOfTries <= L) {
-
-            Scanner scanner = new Scanner(System.in);
-
             printStateBar(numberOfTries, L);
 
             System.out.println(UsefulConstants.GIVE_ME + " liczbę:");
 
             try {
-                yourAnswer = scanner.nextInt();
+                yourAnswer = Integer.parseInt(scanner.next());
             } catch (Exception e) {
                 System.out.println(UsefulConstants.NOT_A_NUMBER);
                 numberOfTries++;
@@ -76,11 +75,11 @@ public class GuessNumberGame {
                 break;
             }
             numberOfTries++;
-            scanner.close();
         }
         if(numberOfTries - 1 == L) {
             System.out.println(UsefulConstants.UNFORTUNATELY + ", wyczerpales limit prob (" + L + ")" + " do ogadniecia liczby " + numberToGuess);
         }
+        scanner.close();
     }
     private void printStateBar(int numberOfTries, int limit) {
         System.out.print("Twoje proby: [");
