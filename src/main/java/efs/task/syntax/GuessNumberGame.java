@@ -83,12 +83,8 @@ public class GuessNumberGame {
     }
     private void printStateBar(int numberOfTries, int limit) {
         System.out.print("Twoje proby: [");
-        for(int i = 0; i < numberOfTries; i++) {
-            System.out.print("*");
-        }
-        for(int i = 0; i < limit - numberOfTries; i++) {
-            System.out.print(".");
-        }
+        System.out.print("*".repeat(numberOfTries));
+        System.out.print(".".repeat(limit - numberOfTries));
         System.out.println("] ");
     }
 }
