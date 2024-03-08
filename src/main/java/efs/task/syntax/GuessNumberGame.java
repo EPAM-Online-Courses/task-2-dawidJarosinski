@@ -1,8 +1,6 @@
 package efs.task.syntax;
 
 
-import java.nio.file.attribute.UserPrincipal;
-import java.util.Random;
 import java.util.Scanner;
 import java.util.random.RandomGenerator;
 
@@ -35,6 +33,7 @@ public class GuessNumberGame {
 
         if(M > 400 || M < 1) {
             System.out.println(UsefulConstants.WRONG_ARGUMENT);
+            System.out.println("Jest spoza zakresu <1," + UsefulConstants.MAX_UPPER_BOUND + ">");
             throw new IllegalArgumentException();
         }
 
